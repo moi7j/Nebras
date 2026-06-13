@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج نبراس لتحليل وبناء استراتيجية علامة تجارية</title>
+    
+    <!-- Google Fonts: IBM Plex Sans Arabic & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome CDN for Clickable Minimalist Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['IBM Plex Sans Arabic', 'Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            darkBg: '#09090b',
+                            darkCard: '#18181b',
+                            lightBg: '#fafafa',
+                            lightCard: '#ffffff',
+                            accent: '#ffffff',
+                            accentDark: '#000000'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom styled scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 10px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #27272a;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+    </style>
+</head>
+<body class="bg-apple-lightBg text-neutral-900 dark:bg-apple-darkBg dark:text-neutral-100 transition-colors duration-500 selection:bg-neutral-200 dark:selection:bg-neutral-800 selection:text-neutral-900 dark:selection:text-white">
+
+    <!-- Premium Background Glow Elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-[40%] left-[10%] w-[800px] h-[800px] rounded-full bg-neutral-200/50 dark:bg-neutral-900/20 blur-[150px]"></div>
+        <div class="absolute -bottom-[30%] -right-[10%] w-[600px] h-[600px] rounded-full bg-neutral-100/40 dark:bg-neutral-950/40 blur-[120px]"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="relative z-10 border-b border-neutral-200/60 dark:border-neutral-800/60 backdrop-blur-md bg-apple-lightBg/60 dark:bg-apple-darkBg/60 sticky top-0 transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo & Identity -->
+            <a href="#" class="flex items-center group">
+                <!-- Image Logo (Larger, borderless, and auto-inverts colors between Dark/Light modes) -->
+                <img src="https://imgg.io/images/2026/06/13/1f4fa34369c2ca5348544f0b031205cd.png" alt="Nibras Logo" class="h-12 md:h-14 w-auto object-contain transition-all duration-300 dark:invert group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/140x45/000/fff?text=Nibras';">
+            </a>
+
+            <!-- Control Actions (Theme Toggle) -->
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="w-10 h-10 rounded-full flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/30 hover:text-black dark:hover:text-white transition-all">
+                    <!-- Sun Icon (visible in Dark Mode) -->
+                    <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    <!-- Moon Icon (visible in Light Mode) -->
+                    <svg id="moonIcon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Intro Section -->
+    <main class="relative z-10 max-w-5xl mx-auto px-6 pt-12 pb-24">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-100/50 dark:bg-neutral-900/50 text-neutral-600 dark:text-neutral-400 text-xs mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900 dark:bg-neutral-100 animate-pulse"></span>
+                <span>استراتيجية وتصميم واعي</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-6 leading-tight">
+                تحليل العلامات التجارية
+            </h1>
+            <p class="text-lg text-neutral-500 dark:text-neutral-400 mb-8 font-light">
+                نموذج نبراس لتحليل وبناء استراتيجية علامة تجارية
+            </p>
+            <div class="p-6 md:p-8 rounded-3xl bg-white dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/60 shadow-xl text-right leading-relaxed text-sm md:text-base text-neutral-600 dark:text-neutral-300 space-y-4">
+                <p>
+                    صُمّم هذا النموذج لجمع المعلومات الأساسية والاستراتيجية المتعلقة بعلامتكم التجارية، بهدف تكوين فهم عميق لطبيعة النشاط، والجمهور المستهدف، والموقع التنافسي، والأهداف المستقبلية، والقيم التي تمثلها العلامة التجارية.
+                </p>
+                <p>
+                    ستُستخدم المعلومات المقدمة في تحليل العلامة التجارية وبناء التوجهات الاستراتيجية والإبداعية المناسبة، بما يسهم في تطوير هوية متسقة، ورسائل فعّالة، وتجربة أكثر تأثيراً لدى الجمهور المستهدف.
+                </p>
+                <p>
+                    نرجو الإجابة على الأسئلة بأكبر قدر ممكن من الدقة والتفصيل، فكل معلومة تساهم في الوصول إلى نتائج أكثر جودة ودقة، وتساعد في بناء استراتيجية وعلامة تجارية تعكس واقع المشروع وطموحاته بشكل صحيح.
+                </p>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 pt-2 border-t border-neutral-200/40 dark:border-neutral-800/40 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    جميع المعلومات المقدمة تُعامل بسرية تامة، وتُستخدم حصراً لأغراض التحليل والتخطيط والتطوير الخاصة بالمشروع.
+                </p>
+            </div>
+        </div>
+
+        <!-- Progress Tracker / Stepper -->
+        <div class="mb-12 max-w-4xl mx-auto">
+            <div class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400 mb-4">
+                <span id="currentStepText" class="font-medium text-neutral-900 dark:text-neutral-100">الخطوة 1 من 6: البيانات الأساسية</span>
+                <span id="progressPercentage">16%</span>
+            </div>
+            <div class="h-1.5 w-full bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
+                <div id="progressBar" class="h-full bg-neutral-900 dark:bg-white rounded-full transition-all duration-500" style="width: 16.66%;"></div>
+            </div>
+            
+            <!-- Quick Step Navigation for Large Screens -->
+            <div class="hidden md:flex justify-between mt-6 border-t border-neutral-200/40 dark:border-neutral-800/40 pt-4">
+                <button type="button" onclick="goToStep(1)" id="stepBtn-1" class="step-nav-btn text-xs font-medium text-neutral-900 dark:text-white pb-2 border-b-2 border-neutral-900 dark:border-white">١. الأساسيات</button>
+                <button type="button" onclick="goToStep(2)" id="stepBtn-2" class="step-nav-btn text-xs font-medium text-neutral-500 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-neutral-300">٢. رؤية النشاط</button>
+                <button type="button" onclick="goToStep(3)" id="stepBtn-3" class="step-nav-btn text-xs font-medium text-neutral-500 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-neutral-300">٣. الجمهور المستهدف</button>
+                <button type="button" onclick="goToStep(4)" id="stepBtn-4" class="step-nav-btn text-xs font-medium text-neutral-500 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-neutral-300">٤. المنافسون</button>
+                <button type="button" onclick="goToStep(5)" id="stepBtn-5" class="step-nav-btn text-xs font-medium text-neutral-500 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-neutral-300">٥. شخصية العلامة</button>
+                <button type="button" onclick="goToStep(6)" id="stepBtn-6" class="step-nav-btn text-xs font-medium text-neutral-500 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-neutral-300">٦. المشروع والختام</button>
+            </div>
+        </div>
+
+        <!-- Google Form Integrated Main Form Container -->
+        <form id="brandStrategyForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScPWt5NZtX-6NvPINB5sYyfKJy_LI-CQLXMeyTeD6eYgxC9mw/formResponse" method="POST" target="_self" class="max-w-4xl mx-auto">
+            
+            <!-- Hidden inputs mapped to Google Form parameters -->
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="partialResponse" value='[null,null,"-1432181420271827809"]'>
+            <input type="hidden" name="pageHistory" value="0">
+            <input type="hidden" name="fbzx" value="-1432181420271827809">
+            <input type="hidden" name="submissionTimestamp" value="-1">
+
+            <!-- ================= STEP 1: Basic Info ================= -->
+            <div id="step-1" class="form-step transition-all duration-300 ease-in-out">
+                <div class="bg-white dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-2xl space-y-6">
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">بيانات التواصل والأساسيات</h2>
+                        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">الحقول المميزة بنجمة (*) مطلوبة للانتقال للخطوة التالية</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Brand Name (Required) -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">اسم العلامة التجارية <span class="text-red-500">*</span></label>
+                            <input type="text" name="entry.287601498" required class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="أدخل اسم علامتك التجارية">
+                        </div>
+
+                        <!-- Project Lead (Required) -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">اسم المسؤول عن المشروع <span class="text-red-500">*</span></label>
+                            <input type="text" name="entry.460595676" required class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="أدخل الاسم الكامل">
+                        </div>
+
+                        <!-- Contact Phone -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">رقم التواصل</label>
+                            <input type="text" name="entry.1273367954" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: 9665xxxxxxxx+">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">البريد الإلكتروني</label>
+                            <input type="email" name="entry.1367804880" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="أدخل بريدك الإلكتروني">
+                        </div>
+
+                        <!-- Founded Year -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">سنة تأسيس العلامة التجارية</label>
+                            <input type="text" name="entry.1856574540" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: 2026">
+                        </div>
+
+                        <!-- General Sector -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما هو القطاع العام للعلامة التجارية</label>
+                            <input type="text" name="entry.285210428" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: التقنية، الأغذية والمشروبات، المقاولات...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= STEP 2: Brand Identity & Services ================= -->
+            <div id="step-2" class="form-step hidden transition-all duration-300 ease-in-out">
+                <div class="bg-white dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-2xl space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">رؤية النشاط والخدمات</h2>
+                        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">التعمق في تفاصيل المنتجات والمشكلات الأساسية التي تحلها العلامة</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Describe Business -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">صف نشاطك التجاري في فقرة قصيرة</label>
+                            <textarea name="entry.1064452679" rows="3" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="اكتب نبذة موجزة..."></textarea>
+                        </div>
+
+                        <!-- Main Products -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما المنتجات أو الخدمات الرئيسية التي تقدمونها؟</label>
+                            <textarea name="entry.1782733434" rows="3" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الخدمات والمنتجات المطروحة في السوق..."></textarea>
+                        </div>
+
+                        <!-- Most Critical Products -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما المنتجات أو الخدمات الأكثر أهمية بالنسبة لكم؟</label>
+                            <input type="text" name="entry.781765467" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="ما هي جوهرة الخدمات لديكم؟">
+                        </div>
+
+                        <!-- Problem brand solves -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما المشكلة التي تحلها علامتكم التجارية للعملاء؟</label>
+                            <textarea name="entry.797593838" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="صف المشاكل أو الفجوات التي تقوم علامتكم بسدها للجمهور..."></textarea>
+                        </div>
+
+                        <!-- Why choose you -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">لماذا يختاركم العملاء بدلاً من المنافسين؟</label>
+                            <textarea name="entry.1993458490" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="القيمة المضافة الفريدة التي تجعل العميل يفضّلكم..."></textarea>
+                        </div>
+
+                        <!-- What makes customer trust brand -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الذي يجعل العميل يثق بعلامتكم التجارية؟</label>
+                            <textarea name="entry.418347230" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="عوامل المصداقية والضمانات التي تمتلكونها..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= STEP 3: Target Audience & Behavior ================= -->
+            <div id="step-3" class="form-step hidden transition-all duration-300 ease-in-out">
+                <div class="bg-white dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-2xl space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">الجمهور المستهدف وسلوكه</h2>
+                        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">رسم ملامح العميل المثالي بدقة لضمان اتجاه الهوية والرسالة بشكل واعي</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Ideal Customer -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">من هو العميل المثالي بالنسبة لكم؟</label>
+                            <input type="text" name="entry.197823247" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: رواد الأعمال، الأمهات، الفئة المتوسطة...">
+                        </div>
+
+                        <!-- Age Group -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الفئة العمرية الرئيسية؟</label>
+                            <input type="text" name="entry.1511118815" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: 18 - 35">
+                        </div>
+
+                        <!-- Target Gender -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">الجنس المستهدف؟</label>
+                            <input type="text" name="entry.983560625" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: ذكور، إناث، كلاهما">
+                        </div>
+
+                        <!-- Target Location -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">الموقع الجغرافي المستهدف؟</label>
+                            <input type="text" name="entry.1037745567" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: الرياض، الخليج العربي...">
+                        </div>
+
+                        <!-- Income Level -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">مستوى الدخل؟</label>
+                            <input type="text" name="entry.1778892434" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: مرتفع، متوسط، منخفض">
+                        </div>
+
+                        <!-- Interests -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">الاهتمامات الرئيسية؟</label>
+                            <input type="text" name="entry.487948863" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="ما يثير اهتمام عميلك: التقنية، الفن، الرياضة...">
+                        </div>
+
+                        <!-- Client Problems -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما المشاكل التي يعاني منها العميل؟</label>
+                            <textarea name="entry.545012693" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="النقاط المؤلمة التي تدفع العميل للبحث عن خدمة كخدمتكم..."></textarea>
+                        </div>
+
+                        <!-- What client searches for -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الذي يبحث عنه العميل قبل الشراء؟</label>
+                            <input type="text" name="entry.58587337" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: الضمان، الجودة، السعر...">
+                        </div>
+
+                        <!-- Client Objections -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الاعتراضات أو المخاوف الشائعة قبل اتخاذ قرار الشراء؟</label>
+                            <input type="text" name="entry.849995754" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: الخوف من تكرار التجربة، السعر المرتفع...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= STEP 4: Market Dynamics & Competitors ================= -->
+            <div id="step-4" class="form-step hidden transition-all duration-300 ease-in-out">
+                <div class="bg-white dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-2xl space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">دراسة المنافسين والسوق</h2>
+                        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">فهم التواجد التنافسي والفرص غير المستغلة لتحديد موقع ريادي لعلامتكم</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Direct Competitors -->
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">من هم أبرز المنافسين المباشرين؟</label>
+                                <textarea name="entry.1003612818" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الشركات التي تقدم نفس الخدمة/المنتج وبنفس المستوى..."></textarea>
+                            </div>
+
+                            <!-- Indirect Competitors -->
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">من هم المنافسون غير المباشرين؟</label>
+                                <textarea name="entry.1009459166" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="من يحلون نفس المشكلة بأسلوب أو منتجات مختلفة..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Competitor Accounts/Links -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">أرفق روابط أو حسابات المنافسين -إن وجدت-</label>
+                            <textarea name="entry.567985685" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="روابط المواقع، حسابات انستغرام، لينكد إن..."></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Likes about Competitors -->
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الذي يعجبك في المنافسين؟</label>
+                                <textarea name="entry.1147434533" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="النقاط البصرية، جودة الخدمة، أسلوب التسويق..."></textarea>
+                            </div>
+
+                            <!-- Dislikes about Competitors -->
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الذي لا يعجبك في المنافسين؟</label>
+                                <textarea name="entry.1851768080" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الثغرات والمساوئ في خدماتهم..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Brand Differentiator -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الذي يميزكم عنهم؟</label>
+                            <input type="text" name="entry.29858713" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="العامل الرئيسي الذي تتفوقون به">
+                        </div>
+
+                        <!-- Untapped Opportunities -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الفرصة التي تشعر أنها غير مستغلة في السوق؟</label>
+                            <textarea name="entry.1037104938" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الفجوات السوقية السانحة للاستثمار والنمو..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= STEP 5: Brand Personality & Archetype ================= -->
+            <div id="step-5" class="form-step hidden transition-all duration-300 ease-in-out">
+                <div class="bg-white dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-2xl space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">جوهر وشخصية العلامة</h2>
+                        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">تجسيد طابع العلامة واختيار القيم والمبادئ الأساسية</p>
+                    </div>
+
+                    <!-- Custom Checklist: Brand Personality Checkboxes -->
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-4">لو كانت العلامة التجارية شخصاً، كيف ستصف شخصيته؟ (اختر الصفات الأقرب)</label>
+                        <input type="hidden" name="entry.1267372703_sentinel" value="">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="احترافية" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">احترافية</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="ودودة" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">ودودة</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="فاخرة" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">فاخرة</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="مبتكرة" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">مبتكرة</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="جريئة" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">جريئة</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="تقليدية" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">تقليدية</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="شبابية" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">شبابية</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="رسمية" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">رسمية</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="إنسانية" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">إنسانية</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.1267372703" value="مرحة" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">مرحة</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Unwanted Traits -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الصفات التي لا تريد أن ترتبط بالعلامة؟</label>
+                            <input type="text" name="entry.587319347" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: رخيصة، معقدة، بطيئة...">
+                        </div>
+
+                        <!-- Desired Emotions -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما المشاعر التي تريد أن يشعر بها العميل عند التعامل معكم؟</label>
+                            <input type="text" name="entry.142707877" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: الأمان، التميز والرفاهية، الحداثة...">
+                        </div>
+
+                        <!-- 3 Words Description -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">اذكر 3 كلمات تصف العلامة التجارية.</label>
+                            <input type="text" name="entry.1534989617" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="كلمة 1، word 2، word 3">
+                        </div>
+
+                        <!-- Core Values -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما القيم الأساسية للعلامة التجارية؟</label>
+                            <input type="text" name="entry.992825184" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثل: الشفافية، الابتكار، الأصالة...">
+                        </div>
+
+                        <!-- Non-negotiable principles -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما المبادئ التي لا يمكن التنازل عنها؟</label>
+                            <input type="text" name="entry.1245316452" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="المبادئ الثابتة في ممارسة عملكم...">
+                        </div>
+
+                        <!-- Promise to customers -->
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الوعد الذي تقدمونه للعملاء؟</label>
+                            <input type="text" name="entry.1605293784" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الوعد الأبرز الذي تلتزمون به دائماً">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= STEP 6: Project & Scope details ================= -->
+            <div id="step-6" class="form-step hidden transition-all duration-300 ease-in-out">
+                <div class="bg-white dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-2xl space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">المشروع المطلوب والرؤية الختامية</h2>
+                        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">مواصفات المشروع والميزانية وخيارات التصميم البصري</p>
+                    </div>
+
+                    <!-- Project Type (Required Checkbox) -->
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-4">ما نوع المشروع المطلوب؟ <span class="text-red-500">*</span></label>
+                        <input type="hidden" name="entry.2021689191_sentinel" value="">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="استراتيجية علامة تجارية" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">استراتيجية علامة</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="شعار" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">شعار</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="هوية بصرية" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">هوية بصرية</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="إعادة تصميم" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">إعادة تصميم</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="دليل استخدام" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">دليل استخدام</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="تغليف" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">تغليف</span>
+                            </label>
+                            <label class="relative flex items-center gap-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.2021689191" value="موقع إلكتروني" class="project-type-cb w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-sm text-neutral-800 dark:text-neutral-300">موقع إلكتروني</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Objectives over 12 Months -->
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما أهدافكم خلال 12 شهراً القادمة؟</label>
+                        <select name="entry.1253457591" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all">
+                            <option value="">اختر هدفاً رئيسياً</option>
+                            <option value="زيادة المبيعات">زيادة المبيعات</option>
+                            <option value="زيادة الوعي">زيادة الوعي</option>
+                            <option value="دخول سوق جديد">دخول سوق جديد</option>
+                            <option value="جذب مستثمرين">جذب مستثمرين</option>
+                            <option value="بناء الثقة">بناء الثقة</option>
+                        </select>
+                    </div>
+
+                    <!-- Current Logo, Identity & Guidelines (Radios) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Has Logo -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-neutral-850 dark:text-neutral-250">هل لديكم شعار حالي؟</label>
+                            <div class="flex flex-col gap-2">
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="entry.1337110754" value="نعم" class="form-radio text-neutral-900 bg-neutral-100 dark:bg-neutral-950 focus:ring-0">
+                                    <span class="text-sm text-neutral-800 dark:text-neutral-300">نعم</span>
+                                </label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="entry.1337110754" value="لا، نحن شركة جديدة" class="form-radio text-neutral-900 bg-neutral-100 dark:bg-neutral-950 focus:ring-0">
+                                    <span class="text-sm text-neutral-800 dark:text-neutral-300">لا، نحن شركة جديدة</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Has Identity -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-neutral-850 dark:text-neutral-250">هل لديكم هوية بصرية حالية؟</label>
+                            <div class="flex flex-col gap-2">
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="entry.1863037745" value="نعم" class="form-radio text-neutral-900 bg-neutral-100 dark:bg-neutral-950 focus:ring-0">
+                                    <span class="text-sm text-neutral-800 dark:text-neutral-300">نعم</span>
+                                </label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="entry.1863037745" value="لا، نحن شركة جديدة" class="form-radio text-neutral-900 bg-neutral-100 dark:bg-neutral-950 focus:ring-0">
+                                    <span class="text-sm text-neutral-800 dark:text-neutral-300">لا، نحن شركة جديدة</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Has Guidelines -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-neutral-850 dark:text-neutral-250">هل لديكم دليل استخدام للهوية؟</label>
+                            <div class="flex flex-col gap-2">
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="entry.1523836958" value="نعم" class="form-radio text-neutral-900 bg-neutral-100 dark:bg-neutral-950 focus:ring-0">
+                                    <span class="text-sm text-neutral-800 dark:text-neutral-300">نعم</span>
+                                </label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="entry.1523836958" value="لا، نحن شركة جديدة" class="form-radio text-neutral-900 bg-neutral-100 dark:bg-neutral-950 focus:ring-0">
+                                    <span class="text-sm text-neutral-800 dark:text-neutral-300">لا، نحن شركة جديدة</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Archetype Style Checklist -->
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-4">ما نوع الأسلوب البصري المناسب؟</label>
+                        <input type="hidden" name="entry.75390457_sentinel" value="">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="فاخر" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">فاخر</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="حديث" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">حديث</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="بسيط" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">بسيط</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="تقني" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">تقني</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="مؤسسي" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">مؤسسي</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="إبداعي" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">إبداعي</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="تراثي" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">تراثي</span>
+                            </label>
+                            <label class="relative flex items-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 cursor-pointer hover:border-neutral-600 transition-all select-none">
+                                <input type="checkbox" name="entry.75390457" value="مستقبلي" class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:ring-0">
+                                <span class="text-xs text-neutral-800 dark:text-neutral-300">مستقبلي</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Timeline, Deliverables & Budget mapping -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما مخرجات المشروع المطلوبة؟</label>
+                            <input type="text" name="entry.1461666155" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="مثال: ملف استراتيجية، شعار، تصاميم سوشيال ميديا...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الموعد المتوقع للتسليم؟</label>
+                            <input type="text" name="entry.1377743581" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="حدد الإطار الزمني التقريبي">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">ما الميزانية التقريبية للمشروع؟</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input type="text" name="entry.419895738" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الميزانية المقدرة للمرحلة الأولى">
+                                <input type="text" name="entry.2120777504" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="إجمالي الميزانية المرصودة">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Assets Instruction Note (Gorgeous professional statement) -->
+                    <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 text-xs md:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed space-y-2">
+                        <div class="flex items-center gap-2 text-neutral-950 dark:text-white font-semibold">
+                            <i class="fa-solid fa-paperclip text-neutral-400"></i>
+                            <span>تنويه بخصوص الملفات والمرفقات:</span>
+                        </div>
+                        <p>
+                            في حال وجود ملفات مساعدة كالشعار الحالي، دليل الهوية السابق، أو مراجع إلهام معينة، يرجى مشاركتها مباشرة عبر البريد الإلكتروني المعتمد للمشروع: 
+                            <a href="mailto:info@mol7j.com" class="font-medium underline hover:text-neutral-950 dark:hover:text-white transition-colors">info@mol7j.com</a>
+                        </p>
+                    </div>
+
+                    <!-- Brand Deep Philosophy Inputs -->
+                    <div class="space-y-6 pt-4 border-t border-neutral-200/40 dark:border-neutral-800/60">
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">لو اختفت علامتكم التجارية غداً، ماذا سيفقد السوق؟</label>
+                            <textarea name="entry.1425776577" rows="2" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="الأثر الجوهري الذي تتركونه خلفكم..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-2">لو أمكن وصف العلامة التجارية بجملة واحدة فقط، ماذا ستكون؟</label>
+                            <input type="text" name="entry.1274139649" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 focus:border-neutral-400 transition-all placeholder-neutral-400 dark:placeholder-neutral-600" placeholder="العبارة الأكثر دقة واختصاراً لهوية علامتكم">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wizard Navigation Buttons -->
+            <div class="mt-8 flex items-center justify-between">
+                <button type="button" id="prevBtn" onclick="prevStep()" class="hidden px-6 py-3 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 text-neutral-600 dark:text-neutral-300 transition-all text-sm font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    السابق
+                </button>
+                <div class="mr-auto flex gap-3">
+                    <button type="button" id="nextBtn" onclick="nextStep()" class="px-8 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all text-sm font-semibold flex items-center gap-2 shadow-lg">
+                        التالي
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button type="submit" id="submitBtn" class="hidden px-8 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all text-sm font-bold flex items-center gap-2 shadow-lg shadow-black/10">
+                        إرسال الاستراتيجية
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Professional Footer Area without Social Media Icons (Removed as requested) -->
+    <footer class="relative z-10 border-t border-neutral-200/60 dark:border-neutral-800/60 py-12 mt-20 transition-all">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col items-center md:items-start text-center md:text-right">
+                <span class="text-sm font-medium text-neutral-950 dark:text-neutral-100">نبراس للاستشارات والتصميم الاستراتيجي</span>
+                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1">صمّم بوعي</p>
+            </div>
+
+            <p class="text-xs text-neutral-500 dark:text-neutral-500">
+                &copy; 2026 نبراس. جميع الحقوق محفوظة.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner Overlay -->
+    <div id="loadingSpinner" class="fixed inset-0 bg-neutral-950/80 backdrop-blur-md hidden items-center justify-center z-50">
+        <div class="text-center space-y-4">
+            <div class="w-12 h-12 border-4 border-neutral-300 dark:border-neutral-600 border-t-neutral-900 dark:border-t-white rounded-full animate-spin mx-auto"></div>
+            <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">جاري إرسال الاستراتيجية وتحليل البيانات...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-neutral-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-6">
+        <div class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 max-w-md w-full text-center space-y-6 shadow-2xl">
+            <div class="w-16 h-16 rounded-full bg-neutral-900 dark:bg-neutral-100/10 text-white dark:text-white flex items-center justify-center mx-auto">
+                <i class="fa-solid fa-check text-2xl"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">تم استلام بياناتك بنجاح</h3>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400">نشكر لكم وقتكم وتعاونكم. ستقوم استشارات نبراس بتحليل هذه المعطيات بعناية فائقة وتصميم التوجهات الاستراتيجية المناسبة لمشروعكم.</p>
+            </div>
+            <button type="button" onclick="closeSuccessModal()" class="w-full py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 font-semibold transition-all">
+                موافق
+            </button>
+        </div>
+    </div>
+
+    <!-- Error Modal (Fallback) -->
+    <div id="errorModal" class="fixed inset-0 bg-neutral-950/80 backdrop-blur-md hidden items-center justify-center z-50 p-6">
+        <div class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 max-w-md w-full text-center space-y-6 shadow-2xl">
+            <div class="w-16 h-16 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center mx-auto">
+                <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">حدث خطأ أثناء الإرسال</h3>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400">لم نتمكن من إرسال النموذج بنجاح لعدم توفر الاتصال بخادم الاستمارة أو لوجود مشكلة تقنية مؤقتة. يرجى مراجعة الحقول وإعادة المحاولة.</p>
+            </div>
+            <button type="button" onclick="closeErrorModal()" class="w-full py-3 rounded-xl bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-300 dark:hover:bg-neutral-700 font-semibold transition-all">
+                إغلاق والمحاولة مجدداً
+            </button>
+        </div>
+    </div>
+
+    <!-- Global Logic Scripts -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        const stepTitles = [
+            "الخطوة 1 من 6: البيانات الأساسية والتواصل",
+            "الخطوة 2 من 6: رؤية النشاط والخدمات",
+            "الخطوة 3 من 6: الجمهور المستهدف وسلوكه",
+            "الخطوة 4 من 6: دراسة المنافسين والسوق",
+            "الخطوة 5 من 6: جوهر وشخصية العلامة",
+            "الخطوة 6 من 6: تفاصيل المشروع والختام"
+        ];
+
+        // Ensure DOM elements correspond correctly
+        function showStep(stepNum) {
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.add('hidden');
+            });
+            const currentStepEl = document.getElementById(`step-${stepNum}`);
+            if (currentStepEl) {
+                currentStepEl.classList.remove('hidden');
+            }
+
+            // Update Progress Tracking indicators
+            document.getElementById('currentStepText').innerText = stepTitles[stepNum - 1];
+            const percentage = Math.round((stepNum / totalSteps) * 100);
+            document.getElementById('progressPercentage').innerText = `${percentage}%`;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+
+            // Back button visibility
+            if (stepNum === 1) {
+                document.getElementById('prevBtn').classList.add('hidden');
+            } else {
+                document.getElementById('prevBtn').classList.remove('hidden');
+            }
+
+            // Next vs Submit buttons
+            if (stepNum === totalSteps) {
+                document.getElementById('nextBtn').classList.add('hidden');
+                document.getElementById('submitBtn').classList.remove('hidden');
+            } else {
+                document.getElementById('nextBtn').classList.remove('hidden');
+                document.getElementById('submitBtn').classList.add('hidden');
+            }
+
+            // Active step styling in horizontal navigation
+            document.querySelectorAll('.step-nav-btn').forEach((btn, idx) => {
+                if (idx + 1 === stepNum) {
+                    btn.className = "step-nav-btn text-xs font-semibold text-neutral-900 dark:text-white pb-2 border-b-2 border-neutral-900 dark:border-white transition-all";
+                } else if (idx + 1 < stepNum) {
+                    btn.className = "step-nav-btn text-xs font-medium text-neutral-600 dark:text-neutral-300 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-white transition-all";
+                } else {
+                    btn.className = "step-nav-btn text-xs font-medium text-neutral-400 dark:text-neutral-500 pb-2 border-b-2 border-transparent hover:text-neutral-900 dark:hover:text-white transition-all";
+                }
+            });
+
+            // Smooth scroll top on step change
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Validate mandatory inputs of current step
+        function validateStep(stepNum) {
+            const currentStepEl = document.getElementById(`step-${stepNum}`);
+            const requiredFields = currentStepEl.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                // Text, Email validation
+                if (field.type === 'text' || field.type === 'email') {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('border-red-500', 'ring-1', 'ring-red-500');
+                    } else {
+                        field.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+                    }
+                }
+                // Checkboxes check
+                if (field.classList.contains('project-type-cb')) {
+                    const checkedCount = currentStepEl.querySelectorAll('.project-type-cb:checked').length;
+                    if (checkedCount === 0) {
+                        isValid = false;
+                        // highlight containing div
+                        currentStepEl.querySelector('.grid').classList.add('border', 'border-red-500', 'p-2', 'rounded-xl');
+                    } else {
+                        currentStepEl.querySelector('.grid').classList.remove('border', 'border-red-500', 'p-2', 'rounded-xl');
+                    }
+                }
+            });
+
+            return isValid;
+        }
+
+        function nextStep() {
+            if (validateStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            } else {
+                // Focus on the first invalid field or notify user visually
+                const invalidField = document.getElementById(`step-${currentStep}`).querySelector('.border-red-500');
+                if (invalidField) {
+                    invalidField.focus();
+                }
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function goToStep(stepNum) {
+            // Allows hopping back to previous steps, but requires validation to go forward
+            if (stepNum < currentStep) {
+                currentStep = stepNum;
+                showStep(currentStep);
+            } else if (stepNum > currentStep) {
+                // Must validate sequentially to hop forward
+                let canGo = true;
+                for (let i = currentStep; i < stepNum; i++) {
+                    if (!validateStep(i)) {
+                        canGo = false;
+                        currentStep = i;
+                        showStep(currentStep);
+                        break;
+                    }
+                }
+                if (canGo) {
+                    currentStep = stepNum;
+                    showStep(currentStep);
+                }
+            }
+        }
+
+        // Handle native Google Form submission
+        document.getElementById('brandStrategyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
+            document.getElementById('loadingSpinner').classList.remove('hidden');
+            document.getElementById('loadingSpinner').classList.add('flex');
+
+            const actionURL = this.action;
+            const formData = new URLSearchParams();
+
+            // Append basic Inputs
+            const textAndSelects = this.querySelectorAll('input[type="text"], input[type="email"], input[type="radio"]:checked, select, textarea');
+            textAndSelects.forEach(input => {
+                formData.append(input.name, input.value);
+            });
+
+            // Group Checkboxes correctly to mimic native Form arrays
+            const checkboxGroups = {};
+            this.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                if (!checkboxGroups[cb.name]) {
+                    checkboxGroups[cb.name] = [];
+                }
+                checkboxGroups[cb.name].push(cb.value);
+            });
+
+            // Append Checkbox list
+            for (const name in checkboxGroups) {
+                checkboxGroups[name].forEach(val => {
+                    formData.append(name, val);
+                });
+            }
+
+            // Append specific sentinels for completeness
+            formData.append('entry.1267372703_sentinel', '');
+            formData.append('entry.75390457_sentinel', '');
+            formData.append('entry.2021689191_sentinel', '');
+
+            try {
+                // Mode 'no-cors' allows posting to external Google Form action without receiving strict JSON response
+                await fetch(actionURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: formData.toString()
+                });
+
+                // Google Forms no-cors fetch will always redirect and trigger successful state here
+                document.getElementById('loadingSpinner').classList.add('hidden');
+                document.getElementById('loadingSpinner').classList.remove('flex');
+                
+                document.getElementById('successModal').classList.remove('hidden');
+                document.getElementById('successModal').classList.add('flex');
+            } catch (err) {
+                console.error("Submission failed: ", err);
+                document.getElementById('loadingSpinner').classList.add('hidden');
+                document.getElementById('loadingSpinner').classList.remove('flex');
+                
+                document.getElementById('errorModal').classList.remove('hidden');
+                document.getElementById('errorModal').classList.add('flex');
+            }
+        });
+
+        // Modal Action Helpers
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('successModal').classList.remove('flex');
+            // Reset to step 1
+            currentStep = 1;
+            document.getElementById('brandStrategyForm').reset();
+            showStep(1);
+        }
+
+        function closeErrorModal() {
+            document.getElementById('errorModal').classList.add('hidden');
+            document.getElementById('errorModal').classList.remove('flex');
+        }
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+
+        // Check user preferences and sync dark mode perfectly
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        });
+
+        // Initialize Form view
+        showStep(1);
+    </script>
+</body>
+</html>
